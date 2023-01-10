@@ -10,6 +10,5 @@ public interface IEstudianteRepo {
 	public Estudiante buscar(Integer id);
 	public void eliminar(Integer id);
 		
-	
 
 }

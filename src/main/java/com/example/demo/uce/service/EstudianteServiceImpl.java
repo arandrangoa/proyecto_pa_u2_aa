@@ -38,7 +38,7 @@ public class EstudianteServiceImpl implements IEstudianteService{
 	@Override
 	public void borrar(Integer id) {
 		// TODO Auto-generated method stub
-		Estudiante estu=this.buscar(id);
+		//Estudiante estu=this.buscar(id);
 		this.estudianteRepo.eliminar(id);
 		
 	}
