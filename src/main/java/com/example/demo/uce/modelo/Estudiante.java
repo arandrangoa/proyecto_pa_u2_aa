@@ -2,7 +2,10 @@ package com.example.demo.uce.modelo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity //Anotacion para mapear
@@ -10,6 +13,8 @@ import jakarta.persistence.Table;
 public class Estudiante {
 	
 	@Id //Metadata para indicar que es la clave primary
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "estu_seq")  //Genera una secuencia y se debe poner asi y el nombre qdel que pusimos abajo
+	@SequenceGenerator(name="estu_seq", sequenceName = "estu_seq", allocationSize = 1) //en el name es una buena practica poner el nombre de la secuencia
 	@Column(name="estu_id") //Anotacion para indicar a que columna mapea
 	private Integer id;  //Mapear con la clase que repsesentan
 	
@@ -78,6 +83,14 @@ public class Estudiante {
 	public void setCedula(String cedula) {
 		this.cedula = cedula;
 	}
+
+	@Override
+	public String toString() {
+		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", genero=" + genero
+				+ ", ciudad=" + ciudad + ", cedula=" + cedula + "]";
+	}
+	
+	
 	
 
 }
