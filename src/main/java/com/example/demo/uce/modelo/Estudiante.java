@@ -1,4 +1,8 @@
+
 package com.example.demo.uce.modelo;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,8 +37,44 @@ public class Estudiante {
 	@Column(name="estu_cedula")
 	private String cedula;
 	
+	@Column(name="estu_pais")
+	private String pais;
+	
+	@Column(name="estu_hobby")
+	private String hobby;
+	
+	@Column(name="estu_salario")
+	private BigDecimal salario;
+	
+	@Column(name="estu_fecha_nacimiento")
+	private LocalDateTime fecha_nacimineto;
 	
 	
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
+	public BigDecimal getSalario() {
+		return salario;
+	}
+
+	public void setSalario(BigDecimal salario) {
+		this.salario = salario;
+	}
+
+	public LocalDateTime getFecha_nacimineto() {
+		return fecha_nacimineto;
+	}
+
+	public void setFecha_nacimineto(LocalDateTime fecha_nacimineto) {
+		this.fecha_nacimineto = fecha_nacimineto;
+	}
+
 	//GET Y SET
 	public Integer getId() {
 		return id;
@@ -82,6 +122,14 @@ public class Estudiante {
 
 	public void setCedula(String cedula) {
 		this.cedula = cedula;
+	}
+	
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
 
 	@Override
