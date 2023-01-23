@@ -49,13 +49,6 @@ public class Ciudadano {
 		this.nombre = nombre;
 	}
 
-	public String getApelldio() {
-		return apellido;
-	}
-
-	public void setApelldio(String apelldio) {
-		this.apellido = apelldio;
-	}
 	
 	public String getApellido() {
 		return apellido;
@@ -72,6 +65,13 @@ public class Ciudadano {
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
+
+	@Override
+	public String toString() {
+		return "Ciudadano [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", empleado=" + empleado + "]";
+	}
+	
+	
 	
 
 }

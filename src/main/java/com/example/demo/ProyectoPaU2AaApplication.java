@@ -13,6 +13,7 @@ import com.example.demo.uce.modelo.Empleado;
 import com.example.demo.uce.modelo.Estudiante;
 import com.example.demo.uce.modelo.Profesor;
 import com.example.demo.uce.service.ICiudadanoService;
+import com.example.demo.uce.service.IEmpleadoService;
 import com.example.demo.uce.service.IEstudianteService;
 import com.example.demo.uce.service.IProfesorService;
 
@@ -20,13 +21,10 @@ import com.example.demo.uce.service.IProfesorService;
 public class ProyectoPaU2AaApplication implements CommandLineRunner{
 
 	@Autowired
-	private IEstudianteService estudianteService;
-	
-	@Autowired
 	private ICiudadanoService ciudadanoService;
 	
 	@Autowired
-	private IProfesorService iProfesorService;
+	private IEmpleadoService empleadoService;
 	
 	
 	public static void main(String[] args) {
@@ -37,42 +35,28 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		Estudiante estu=new Estudiante();
-		estu.setNombre("Alex");
-		estu.setApellido("Andrango");
-		estu.setCedula("1727193847");
-		estu.setCiudad("Cuenca");
-		estu.setGenero("M");
-	
-		//this.estudianteService.agregar(estu);
-		
-		//this.estudianteService.modificar(estu);
-		//Estudiante buscar=this.estudianteService.buscar(3);
-		//System.out.println(buscar);
-		
-		Profesor prof=new Profesor();
-		prof.setNombre("Guadalupe");
-		prof.setApellido("Sandoval");
-		prof.setCedula("1713031191");
-		prof.setCiudad("Guayaquil");
-		prof.setGenero("F");
-		
-		//this.iProfesorService.agregar(prof);
 		Ciudadano ciu=new Ciudadano();
-		ciu.setNombre("Alex");
-		ciu.setApellido("Apellido");
+		ciu.setNombre("Darllen");
+		ciu.setApellido("Calvachi");
+		this.ciudadanoService.guardar(ciu); 
+		this.ciudadanoService.borrar(20);
+		Ciudadano ciubusqueda=this.ciudadanoService.encontrar(11);
+		System.out.println(ciubusqueda);
 		
 	
-		
 		
 		Empleado empl= new Empleado();
 		empl.setFechaIngreso(LocalDateTime.now());
 		empl.setSalario(new BigDecimal(100));
 		empl.setCiudadano(ciu);
-		
 		ciu.setEmpleado(empl);
 		
-		this.ciudadanoService.guardar(ciu);
+		this.empleadoService.agregar(empl);
+		this.empleadoService.borrar(10);
+		Empleado emplbusqueda=this.empleadoService.encontrar(6);
+		//System.out.println(emplbusqueda);
+		
+		
 	}
 
 }
