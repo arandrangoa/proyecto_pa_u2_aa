@@ -35,26 +35,35 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		Ciudadano ciu=new Ciudadano();
+		/*Ciudadano ciu=new Ciudadano();
 		ciu.setNombre("Darllen");
 		ciu.setApellido("Calvachi");
-		this.ciudadanoService.guardar(ciu); 
-		this.ciudadanoService.borrar(20);
-		Ciudadano ciubusqueda=this.ciudadanoService.encontrar(11);
-		System.out.println(ciubusqueda);
-		
-	
 		
 		Empleado empl= new Empleado();
 		empl.setFechaIngreso(LocalDateTime.now());
 		empl.setSalario(new BigDecimal(100));
 		empl.setCiudadano(ciu);
-		ciu.setEmpleado(empl);
 		
-		this.empleadoService.agregar(empl);
-		this.empleadoService.borrar(10);
-		Empleado emplbusqueda=this.empleadoService.encontrar(6);
-		//System.out.println(emplbusqueda);
+		ciu.setEmpleado(empl);*/
+		
+		//this.ciudadanoService.guardar(ciu);
+		
+
+		//Segundo ejemplo
+		/*Ciudadano ciu2= new Ciudadano();
+		ciu2.setNombre("Mashiel");
+		ciu2.setApellido("Tuquerres");
+		
+		
+		Empleado empl2=new Empleado();
+		empl2.setSalario(new BigDecimal(20));
+		empl2.setFechaIngreso(LocalDateTime.now());
+		empl2.setCiudadano(ciu2);
+		
+		this.ciudadanoService.guardar(ciu2);*/
+		
+		
+		
 		
 		
 	}
