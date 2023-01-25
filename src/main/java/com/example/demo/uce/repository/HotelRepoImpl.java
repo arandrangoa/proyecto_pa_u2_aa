@@ -30,8 +30,26 @@ public class HotelRepoImpl implements IHotelRepo{
 	@Override
 	public Hotel buscar(Integer id) {
 		// TODO Auto-generated method stub
-		return this.entityManager.find(Hotel.class, id);
+		Hotel hotel= this.entityManager.find(Hotel.class, id);
+		hotel.getHabitaciones().size();
+		
+		return hotel;
+		
+		
 	}
+	
+	@Override
+	public Hotel buscarligero(Integer id) {
+		// TODO Auto-generated method stub
+		Hotel hotel= this.entityManager.find(Hotel.class, id);
+		hotel.getHabitaciones();
+		
+		return hotel;
+		
+		
+	}
+	
+	
 
 	@Override
 	public void eliminar(Integer id) {

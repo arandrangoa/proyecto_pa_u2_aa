@@ -19,6 +19,7 @@ import com.example.demo.uce.modelo.Profesor;
 import com.example.demo.uce.service.ICiudadanoService;
 import com.example.demo.uce.service.IEmpleadoService;
 import com.example.demo.uce.service.IEstudianteService;
+import com.example.demo.uce.service.IHabitacionService;
 import com.example.demo.uce.service.IHotelService;
 import com.example.demo.uce.service.IProfesorService;
 
@@ -33,6 +34,9 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 	
 	@Autowired
 	private IHotelService hotelService;
+	
+	@Autowired
+	private IHabitacionService habitacionService;
 	
 	
 	public static void main(String[] args) {
@@ -51,24 +55,19 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 		empl.setFechaIngreso(LocalDateTime.now());
 		empl.setSalario(new BigDecimal(100));
 		empl.setCiudadano(ciu);
-		
 		ciu.setEmpleado(empl);*/
-		
 		//this.ciudadanoService.guardar(ciu);
-		
-
 		//Segundo ejemplo
 		/*Ciudadano ciu2= new Ciudadano();
 		ciu2.setNombre("Mashiel");
 		ciu2.setApellido("Tuquerres");
 		
-		
 		Empleado empl2=new Empleado();
 		empl2.setSalario(new BigDecimal(20));
 		empl2.setFechaIngreso(LocalDateTime.now());
 		empl2.setCiudadano(ciu2);
-		
 		this.ciudadanoService.guardar(ciu2);*/
+		
 		Habitacion habi1=new Habitacion();
 		Habitacion habi2=new Habitacion();
 		Habitacion habi3=new Habitacion();
@@ -85,14 +84,32 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 		hotel.setNombre("Decameron");
 		hotel.setHabitaciones(listaHabitaciones);
 		
-		Hotel actualihotel=this.hotelService.encontrar(2);
-		actualihotel.setDireccion("Atacames");
-		actualihotel.setHabitaciones(listaHabitaciones);
-		actualihotel.setNombre("Diamond");
 		
-		this.hotelService.agregar(hotel);
-		this.hotelService.borrar(1);
-		this.hotelService.modificar(actualihotel);
+		/*actualihotel.setDireccion("Atacames");
+		actualihotel.setHabitaciones(listaHabitaciones);
+		actualihotel.setNombre("Diamond");*/
+		
+		//this.hotelService.agregar(hotel);
+		//this.hotelService.encontrar(3);
+		
+		Hotel buscarhotel=this.hotelService.encontrar(4);
+		System.out.println(buscarhotel);
+		List<Habitacion> listaHabHotel4=buscarhotel.getHabitaciones();
+		
+			for(Habitacion hab:listaHabHotel4) {
+				System.out.println(hab);
+		}
+		
+		
+		
+		/*Habitacion habi4=new Habitacion();
+		habi4.setHotel(buscarhotel);
+		habi4.setNumero("A1");*/
+		//this.habitacionService.agregar(habi4);
+		//this.habitacionService.eliminar(24);
+		
+		//this.habitacionService.eliminar(28);
+		
 		
 		
 		

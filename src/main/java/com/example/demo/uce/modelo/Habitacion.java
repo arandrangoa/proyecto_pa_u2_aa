@@ -24,7 +24,7 @@ public class Habitacion {
 	@Column(name="habi_numero")
 	private String numero;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)//
 	@JoinColumn(name="habi_id_hotel")
 	private Hotel hotel;
 	
@@ -47,6 +47,12 @@ public class Habitacion {
 	public void setHotel(Hotel hotel) {
 		this.hotel = hotel;
 	}
+	
+	@Override
+	public String toString() {
+		return "Habitacion [id=" + id + ", numero=" + numero /*+ ", hotel=" + hotel + "]"*/;
+	}
+	
 	
 	
 
