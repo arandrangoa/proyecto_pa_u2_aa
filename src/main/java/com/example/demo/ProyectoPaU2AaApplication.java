@@ -14,19 +14,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.demo.uce.modelo.Autor;
 import com.example.demo.uce.modelo.Ciudadano;
+import com.example.demo.uce.modelo.Cliente;
 import com.example.demo.uce.modelo.Empleado;
 import com.example.demo.uce.modelo.Estudiante;
 import com.example.demo.uce.modelo.Habitacion;
 import com.example.demo.uce.modelo.Hotel;
 import com.example.demo.uce.modelo.Libro;
 import com.example.demo.uce.modelo.Profesor;
+import com.example.demo.uce.modelo.Vehiculo;
 import com.example.demo.uce.service.IAutorService;
 import com.example.demo.uce.service.ICiudadanoService;
+import com.example.demo.uce.service.IClienteService;
 import com.example.demo.uce.service.IEmpleadoService;
 import com.example.demo.uce.service.IEstudianteService;
 import com.example.demo.uce.service.IHabitacionService;
 import com.example.demo.uce.service.IHotelService;
 import com.example.demo.uce.service.IProfesorService;
+import com.example.demo.uce.service.IVehiculoService;
 
 @SpringBootApplication
 public class ProyectoPaU2AaApplication implements CommandLineRunner{
@@ -43,7 +47,13 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 	@Autowired
 	private IHabitacionService habitacionService;
 	
-	@Autowired IAutorService autorService;
+	@Autowired 
+	private IVehiculoService iVehiculoService;
+	
+	@Autowired
+	private IClienteService clienteService;
+	
+	
 	
 	
 	public static void main(String[] args) {
@@ -117,7 +127,7 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 		
 		//this.habitacionService.eliminar(28);
 		
-		Libro libro1=new Libro();
+		/*Libro libro1=new Libro();
 		libro1.setNombre("P.Web");
 		
 		
@@ -138,9 +148,80 @@ public class ProyectoPaU2AaApplication implements CommandLineRunner{
 		libro1.setAutores(autores);
 		libro2.setAutores(autores)
 ;		
-		this.autorService.agregar(autor1);
+		this.autorService.agregar(autor1);*/
 		
 		
+		
+		/*Cliente cliente1=new Cliente();
+		cliente1.setNombre("Alex");
+		cliente1.setApellido("Andrango");
+		cliente1.setEdad("23");
+		cliente1.setNumCedula("1727193847");
+		
+		Cliente cliente2=new Cliente();
+		cliente2.setNombre("Darleen");
+		cliente2.setApellido("Calvachi");
+		cliente2.setEdad("25");
+		cliente2.setNumCedula("1714458237");
+		
+		Cliente cliente3=new Cliente();
+		cliente3.setNombre("Mahiel");
+		cliente3.setApellido("Tuquerres");
+		cliente3.setEdad("20");
+		cliente3.setNumCedula("1713031191");
+		
+		Set<Cliente> clientesVehi1=new HashSet<>();
+		clientesVehi1.add(cliente1);
+		clientesVehi1.add(cliente2);
+		clientesVehi1.add(cliente3);
+		
+		
+		Vehiculo vehiculo1=new Vehiculo();
+		vehiculo1.setColor("Negro");
+		vehiculo1.setFabricante("Chevrolet");
+		vehiculo1.setModelo("Sail");
+		vehiculo1.setPlaca("TCX900");
+		vehiculo1.setClientes(clientesVehi1);
+		this.iVehiculoService.agregar(vehiculo1);	*/
+		
+		Vehiculo vehiculo1=new Vehiculo();
+		vehiculo1.setColor("Negro");
+		vehiculo1.setFabricante("Chevrolet");
+		vehiculo1.setModelo("Sail");
+		vehiculo1.setPlaca("PAO100");
+		
+		Vehiculo vehiculo2=new Vehiculo();
+		vehiculo1.setColor("Azul");
+		vehiculo1.setFabricante("Mazda");
+		vehiculo1.setModelo("MAZDA 3");
+		vehiculo1.setPlaca("THA600");
+		
+		Vehiculo vehiculo3=new Vehiculo();
+		vehiculo1.setColor("Rojo");
+		vehiculo1.setFabricante("Toyots");
+		vehiculo1.setModelo("Fortuner");
+		vehiculo1.setPlaca("GIO800");
+		
+		Set<Vehiculo> vehiculoClien1=new HashSet<>();
+		vehiculoClien1.add(vehiculo1);
+		vehiculoClien1.add(vehiculo2);
+		vehiculoClien1.add(vehiculo3);
+		
+		Cliente cliente=new Cliente();
+		cliente.setNombre("Alex");
+		cliente.setApellido("Andrango");
+		cliente.setEdad("23");
+		cliente.setNumCedula("1727193847");
+		cliente.setVehiculos(vehiculoClien1);
+		
+		Set<Cliente> clientes=new HashSet<>();
+		clientes.add(cliente);
+		
+		vehiculo1.setClientes(clientes);
+		vehiculo2.setClientes(clientes);
+		vehiculo3.setClientes(clientes);
+		
+		this.clienteService.agregar(cliente);
 		
 		
 	}
