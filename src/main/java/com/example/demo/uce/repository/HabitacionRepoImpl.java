@@ -39,5 +39,7 @@ public class HabitacionRepoImpl implements IHabitacionRepo{
 		Habitacion habi=this.buscar(id);
 		this.entityManager.remove(habi);
 	}
+	
+	
 
 }
